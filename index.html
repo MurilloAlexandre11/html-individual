@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ficha de Informações</h1>
+    <h1>Cadastro de novo funcionário</h1>
+    <div class="ficha_1"></div>
+    <div class="ficha_2"></div>
+    
+</body>
+</html>
+
+<script>
+
+    const fichanovofuncionario = {
+        Nome: window.prompt("Nome do Funcionário"),
+        Idade: Number.parseInt(window.prompt("Idade do funcionário em anos")),
+        endereço: {
+            rua:window.prompt("Rua"),
+            numero: Number.parseInt("Número da casa"),
+            bairro:window.prompt("Bairro"),
+            cidade:window.prompt("Cidade"),
+          cep: window.prompt("CEP")
+  },
+  telefones: {
+    telefonecontato: window.prompt("Digite seu número com o DDD"),
+    telefoneemergencia: window.prompt("Telefone de emergência com DDD")
+  }
+};
+
+
+document.write("Nome: " + fichanovofuncionario.Nome + "<br>");
+document.write("Idade: " + fichanovofuncionario.idade + "<br>");
+document.write("Rua: " + fichanovofuncionario.endereço.rua + "<br>");
+document.write("Número: " + fichanovofuncionario.endereço.numero + "<br>");
+document.write("Bairro: " + fichanovofuncionario.endereço.bairro + "<br>");
+document.write("Cidade: " + fichanovofuncionario.endereço.cidade + "<br>");
+document.write("CEP: " + fichanovofuncionario.endereço.cep + "<br>");
+document.write("Telefone: " + fichanovofuncionario.telefones.telefonecontato + "<br>");
+document.write("Telefone de Emergência: " + fichanovofuncionario.telefones.telefoneemergencia + "<br> <br> <br>");
+
+
+if (fichanovofuncionario.idade - 50 >= 0) {
+  document.write("Esse ano você ganha férias bônus!");
+} else {
+  var falta = 50 - fichanovofuncionario.idade;
+  document.write("Faltam " + falta + " anos para suas férias bônus");
+}
+</script>
+</body>
+</html>
