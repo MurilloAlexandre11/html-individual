@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Ficha</title> 
+    <link rel="stylesheet" href="style.css"> 
+<body> 
+
+    <h1>Ficha de Informações</h1> 
+    <h1>Cadastro de novo funcionário</h1> 
+
+    <div class="ficha_1"></div> <!-- Div vazia que pode ser usada para mostrar dados futuramente -->
+    <div class="ficha_2"></div> <!-- Outra div vazia -->
+
+</body>
+</html>
+
+<script> <!-- Início do bloco de script JavaScript -->
+
+    // Cria um objeto para armazenar as informações do novo funcionário
+    const fichanovofuncionario = {
+        // Solicita ao usuário o nome do funcionário
+        Nome: window.prompt("Nome do Funcionário"),  
+
+        // Solicita a idade do funcionário e converte para um número inteiro
+        Idade: Number.parseInt(window.prompt("Idade do funcionário em anos")),  
+
+        // Cria um objeto interno para armazenar os dados do endereço
+        endereço: {  
+            rua: window.prompt("Rua"), // Pergunta a rua
+            numero: Number.parseInt(window.prompt("Número da casa")), // Pergunta o número da casa
+            bairro: window.prompt("Bairro"), // Pergunta o bairro
+            cidade: window.prompt("Cidade"), // Pergunta a cidade
+            cep: window.prompt("CEP") // Pergunta o CEP
+        },
+
+        // Cria um objeto interno para armazenar os telefones
+        telefones: {  
+            telefonecontato: window.prompt("Digite seu número com o DDD"), // Telefone de contato
+            telefoneemergencia: window.prompt("Telefone de emergência com DDD") // Telefone de emergência
+        }
+    };
+
+    // Escreve no documento os dados coletados acima
+    document.write("Nome: " + fichanovofuncionario.Nome + "<br>"); // Exibe o nome
+    document.write("Idade: " + fichanovofuncionario.Idade + "<br>"); // Exibe a idade (corrigido: estava com letra minúscula)
+    document.write("Rua: " + fichanovofuncionario.endereço.rua + "<br>"); // Exibe a rua
+    document.write("Número: " + fichanovofuncionario.endereço.numero + "<br>"); // Exibe o número da casa
+    document.write("Bairro: " + fichanovofuncionario.endereço.bairro + "<br>"); // Exibe o bairro
+    document.write("Cidade: " + fichanovofuncionario.endereço.cidade + "<br>"); // Exibe a cidade
+    document.write("CEP: " + fichanovofuncionario.endereço.cep + "<br>"); // Exibe o CEP
+    document.write("Telefone: " + fichanovofuncionario.telefones.telefonecontato + "<br>"); // Exibe o telefone de contato
+    document.write("Telefone de Emergência: " + fichanovofuncionario.telefones.telefoneemergencia + "<br><br><br>"); // Exibe o telefone de emergência
+
+    // Verifica se o funcionário já atingiu ou passou dos 50 anos
+    if (fichanovofuncionario.Idade - 50 >= 0) { 
+        document.write("Esse ano você ganha férias bônus!"); // Mensagem se já tiver 50 anos ou mais
+    } else {
+        var falta = 50 - fichanovofuncionario.Idade; // Calcula quantos anos faltam para atingir 50
+        document.write("Faltam " + falta + " anos para suas férias bônus"); // Exibe a mensagem com o tempo restante
+    }
+
+</script> <!-- Fim do script -->
+
+</body> <!-- Fim do corpo da página -->
+</html> <!-- Fim do documento HTML -->
